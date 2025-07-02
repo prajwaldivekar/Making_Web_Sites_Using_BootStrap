@@ -65,7 +65,7 @@
   <div class="container mt-5 px-3">
     <div class="card shadow">
       <div class="card-header bg-primary text-white">
-        <h4 class="mb-0">Quotation Form - Washing Centre</h4>
+        <h4 class="mb-0">Recipt Form - Washing Centre</h4>
       </div>
       <div class="card-body">
         <form id="quotationForm">
@@ -95,7 +95,7 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="amount">Estimated Amount (₹)</label>
+            <label for="amount">Pay Amount (₹)</label>
             <input type="number" class="form-control" id="amount" placeholder="Auto-filled" readonly required>
           </div>
           <div class="form-group">
@@ -103,7 +103,7 @@
             <textarea class="form-control" id="remarks" rows="3" placeholder="Anything specific? (optional)"></textarea>
           </div>
 
-          <button id="generateBtn" type="button" class="btn btn-success w-100 mt-3" onclick="generatePDF()">Download Quotation PDF</button>
+          <button id="generateBtn" type="button" class="btn btn-success w-100 mt-3" onclick="generatePDF()">Download Recipt PDF</button>
 
           <!-- Share Buttons -->
           <div class="text-center mt-3">
@@ -186,10 +186,10 @@
       doc.line(20, 40, 190, 40);
       doc.setFontSize(16);
       doc.setFont("helvetica", "bold");
-      doc.text("QUOTATION", 105, 50, null, null, "center");
+      doc.text("RECIPT", 105, 50, null, null, "center");
       doc.setFontSize(12);
       doc.setFont("helvetica", "normal");
-      doc.text(`Quotation No: ${quoteNumber}`, 20, 60);
+      doc.text(`Recipt No: ${quoteNumber}`, 20, 60);
       doc.text(`Date: ${date}`, 160, 60);
 
       let y = 75;
@@ -204,7 +204,7 @@
       doc.text("Service Details", 20, y);
       doc.setFont("helvetica", "normal");
       doc.text(`Service Type: ${service}`, 20, y + 10);
-      doc.text(`Estimated Price: ₹${amount}`, 20, y + 20);
+      doc.text(`Price: ₹${amount}`, 20, y + 20);
 
       if (remarks.trim()) {
         y += 40;
@@ -219,9 +219,9 @@
       doc.setTextColor(100);
       doc.text("Thank you for choosing Sai Datta Washing Centre. We value your trust.", 105, 280, null, null, "center");
 
-      doc.save(`${name}_quotation.pdf`);
+      doc.save(`${name}_recipt.pdf`);
 
-      const msgText = `🧾 *Sai Datta Washing Centre Quotation*\n*Quotation No:* ${quoteNumber}\n*Date:* ${date}\n👤 *Name:* ${name}\n📞 *Phone:* ${phone}\n🛠️ *Service:* ${service}\n💰 *Amount:* ₹${amount}${remarks.trim() ? `\n📝 *Remarks:* ${remarks.trim()}` : ""}\n\nThank you for choosing us! 🙏`;
+      const msgText = ` *Sai Datta Washing Centre Recipt*\n*Recipt No:* ${quoteNumber}\n*Date:* ${date}\n👤 *Name:* ${name}\n📞 *Phone:* ${phone}\n🛠️ *Service:* ${service}\n💰 *Amount:* ₹${amount}${remarks.trim() ? `\n📝 *Remarks:* ${remarks.trim()}` : ""}\n\nThank you for choosing us! 🙏`;
 
       document.getElementById("whatsappShare").href = `https://wa.me/?text=${encodeURIComponent(msgText)}`;
       document.getElementById("emailShare").href = `mailto:?subject=Sai Datta Washing Centre Quotation&body=${encodeURIComponent(msgText)}`;
