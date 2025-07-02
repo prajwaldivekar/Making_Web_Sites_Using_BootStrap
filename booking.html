@@ -44,21 +44,21 @@
         <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
         <li class="nav-item active"><a class="nav-link" href="booking.html">Pre Booking <span class="sr-only">(current)</span></a></li>
       </ul>
-    </div>
-     <form class="form-inline my-2 my-lg-0" onsubmit="return handleSearch(event)">
+      <form class="form-inline my-2 my-lg-0" onsubmit="return handleSearch(event)">
         <input id="searchInput" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
+    </div>
   </nav>
 
   <div class="container mt-5 pt-5">
     <h2 class="text-center text-primary font-weight-bold mb-4">Booking Form</h2>
-    <div class="d-flex flex-wrap justify-content-center mt-4">
+    <!-- <div class="d-flex flex-wrap justify-content-center mt-4">
       <a class="btn btn-primary mx-2 my-1" href="index.html">Home</a>
       <a class="btn btn-primary mx-2 my-1" href="Prize.html">Our Price List</a>
       <a class="btn btn-primary mx-2 my-1" href="about.html">About us</a>
       <a class="btn btn-primary mx-2 my-1 active" href="booking.html">Pre Booking</a>
-    </div>
+    </div> -->
     <p class="text-center">We are a professional car washing and detailing service located on the Pune-Solapur Highway. Our goal is to provide quality care for your vehicle using the best products and skilled staff.</p>
   </div>
 
@@ -108,7 +108,7 @@
           <!-- Share Buttons -->
           <div class="text-center mt-3">
             <a id="whatsappShare" class="btn btn-success mx-2" target="_blank">📲 Share on WhatsApp</a>
-            <a id="emailShare" class="btn btn-dark mx-2" target="_blank">📧 Share via Email</a>
+           
             <p>Share this file to thsi phone no : 72</p>
           </div>
         </form>
@@ -224,7 +224,7 @@
       const msgText = ` *Sai Datta Washing Centre Recipt*\n*Recipt No:* ${quoteNumber}\n*Date:* ${date}\n👤 *Name:* ${name}\n📞 *Phone:* ${phone}\n🛠️ *Service:* ${service}\n💰 *Amount:* ₹${amount}${remarks.trim() ? `\n📝 *Remarks:* ${remarks.trim()}` : ""}\n\nThank you for choosing us! 🙏`;
 
       document.getElementById("whatsappShare").href = `https://wa.me/?text=${encodeURIComponent(msgText)}`;
-      document.getElementById("emailShare").href = `mailto:?subject=Sai Datta Washing Centre Quotation&body=${encodeURIComponent(msgText)}`;
+      
     }
   </script>
    <script>
